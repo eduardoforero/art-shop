@@ -1,0 +1,17 @@
+@import './normalize.css';
+
+:root {
+    --theme-color-black: #000;
+    --theme-color-white: #fff;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--theme-color-black);
+}
+
+a:hover {
+    text-decoration: none;
+    outline: none;
+}
