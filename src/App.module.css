@@ -1,0 +1,11 @@
+.photoList{
+    margin: 0 auto;
+    max-width: 1320px;
+
+}
+
+.listGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}

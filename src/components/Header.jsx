@@ -1,7 +1,7 @@
-import cartIcon from '/cart-icon.svg'
-import searchIcon from '/search-icon.svg'
-import userIcon from '/user-icon.svg'
-import wishIcon from '/wish-icon.svg'
+import cartIcon from '/img/cart-icon.svg'
+import searchIcon from '/img/search-icon.svg'
+import userIcon from '/img/user-icon.svg'
+import wishIcon from '/img/wish-icon.svg'
 
 
 

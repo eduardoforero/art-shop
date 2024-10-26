@@ -1,7 +1,4 @@
 .mainHeader {
-    position: fixed;
-    left: 0;
-    right: 0;
     box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1);
     color: var(--theme-color-white);
     background-color: var(--theme-color-black);
