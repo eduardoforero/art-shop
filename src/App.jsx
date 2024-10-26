@@ -8,10 +8,25 @@ import styles from './App.module.css'
 function App() {
 
   const [data, setData] = useState([])
+  const [cart, setCart] = useState([])
 
   useEffect(() => {
     setData(db)
   }, [])
+
+  function addToCart(item) {
+
+    const itemExist = cart.findIndex(photo => photo.id === item.id)
+
+    if (itemExist >= 0) {
+      const updatedCart = [...cart]
+      updatedCart[itemExist].quantity++
+      setCart(updatedCart)
+    } else {
+      item.quantity = 1
+      setCart([...cart, item])
+    }
+  }
 
   return (
     <>
@@ -19,10 +34,10 @@ function App() {
 
       <section className={styles.photoList}>
         <div className={styles.listGrid}>
-          {data.map(photo => 
-            (
-              <Photo key={photo.id} name={photo.name} price={photo.price} image={photo.image} />
-            )
+          {data.map(photo =>
+          (
+            <Photo key={photo.id} photo={photo} addToCart={addToCart} />
+          )
           )}
         </div>
       </section>
