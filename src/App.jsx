@@ -30,7 +30,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header cart={cart} />
 
       <section className={styles.photoList}>
         <div className={styles.listGrid}>

@@ -108,6 +108,10 @@
     border-bottom-color: var(--theme-color-white);
 }
 
+.productListWidgetEmpty {
+    font-size: 15px;
+}
+
 .productListWidget {
     position: relative;
     overflow: auto;
