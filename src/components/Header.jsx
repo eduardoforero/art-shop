@@ -1,13 +1,14 @@
+import { useMemo } from 'react'
 import cartIcon from '/img/cart-icon.svg'
 import searchIcon from '/img/search-icon.svg'
 import userIcon from '/img/user-icon.svg'
 import wishIcon from '/img/wish-icon.svg'
 import styles from './Header.module.css'
 
-function Header({ cart }) {
+function Header({ cart, removeFromCart }) {
 
-    const isEmpty = () => cart.length === 0
-    const cartTotal = () => cart.reduce( (total, item) => total + (item.quantity * item.price), 0 )
+    const isEmpty = useMemo(() => cart.length === 0, [cart]) 
+    const cartTotal = useMemo(() => cart.reduce( (total, item) => total + (item.quantity * item.price), 0 ), [cart]) 
 
     return (
         <header className={styles.mainHeader}>
@@ -47,7 +48,7 @@ function Header({ cart }) {
                             <div className={styles.widgetShoppingCartContent}>
 
                                 {
-                                    isEmpty() ?
+                                    isEmpty ?
                                         (
                                             <div className={styles.productListWidgetEmpty}>
                                                 No products in the cart.
@@ -65,21 +66,19 @@ function Header({ cart }) {
                                                             <div className={styles.productListWidgetWrap}>
 
                                                                 <div className={styles.productListWidgetThumbCol}>
-                                                                    <a href="">
-                                                                        <img
-                                                                            src={`/img/${photo.image}.jpg`}
-                                                                            className={`${styles.productListWidgetThumb} ${styles.productListWidgetThumbCover}`}
-                                                                            alt=""
-                                                                        />
-                                                                    </a>
+                                                                   
+                                                                    <img
+                                                                        src={`/img/${photo.image}.jpg`}
+                                                                        className={`${styles.productListWidgetThumb} ${styles.productListWidgetThumbCover}`}
+                                                                        alt=""
+                                                                    />
+                                                                    
                                                                 </div>
 
                                                                 <div className={styles.productListWidgetTitleCol}>
 
                                                                     <div className={styles.productListWidgetTitle}>
-                                                                        <a href="">
-                                                                            {photo.name}
-                                                                        </a>
+                                                                        {photo.name}
                                                                     </div>
 
                                                                     <div className={styles.productListWidgetPrice}>
@@ -87,7 +86,7 @@ function Header({ cart }) {
                                                                     </div>
 
                                                                 </div>
-                                                                <a className={styles.productListWidgetRemove}> X </a>
+                                                                <a onClick={() => removeFromCart(photo.id)} className={styles.productListWidgetRemove}> X </a>
                                                             </div>
                                                         </li>
                                                     )
@@ -99,15 +98,11 @@ function Header({ cart }) {
                                                     <span className={styles.productListWidgetTotalTitle}>Subtotal:</span>
                                                     <span className={styles.amount}>
                                                         <bdi>
-                                                            <span>$</span>{cartTotal()}
+                                                            <span>$</span>{cartTotal}
                                                         </bdi>
                                                     </span>
                                                 </div>
                                             </>
-
-
-
-
 
                                         )
                                 }

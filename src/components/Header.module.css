@@ -147,6 +147,7 @@
 .productListWidgetWrap {
     display: flex;
     position: relative;
+    align-items: center;
 }
 
 .productListWidgetThumbCol {
@@ -193,19 +194,19 @@
 }
 
 .productListWidgetRemove {
+    cursor: pointer;
+    color: var(--theme-color-white);
+    background-color: var(--theme-color-black);
+    width: 21px;
+    height: 21px;
+    text-align: center;
+    border-radius: 50%;
+    padding-top: 3px;
+}
+
+.productListWidgetRemove:hover {
     color: var(--theme-color-black);
-    position: absolute;
-    display: flex;
-    width: 18px;
-    height: 18px;
-    justify-content: center;
-    align-items: center;
-    font-size: 8px;
-    line-height: 1;
-    left: -18px;
-    top: 9px;
-    opacity: 0;
-    visibility: hidden;
+    background-color: var(--theme-color-white);
 }
 
 .productListWidgetTotal {

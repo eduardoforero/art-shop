@@ -28,9 +28,13 @@ function App() {
     }
   }
 
+  function removeFromCart(id) {
+    setCart(prevCart => prevCart.filter(photo => photo.id !== id))
+  }
+
   return (
     <>
-      <Header cart={cart} />
+      <Header cart={cart} removeFromCart={removeFromCart} />
 
       <section className={styles.photoList}>
         <div className={styles.listGrid}>
