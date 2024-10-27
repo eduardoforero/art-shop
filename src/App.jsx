@@ -53,6 +53,11 @@ function App() {
     setCart(updatedCart)
   }
 
+  function clearCart() {
+    setCart([])
+
+  }
+
   function increaseQuantity(id) {
     const updatedCart = cart.map(item => {
       if (item.id === id && item.quantity < MAX_ITEMS) {
@@ -73,6 +78,7 @@ function App() {
         removeFromCart={removeFromCart}
         decreaseQuantity={decreaseQuantity}
         increaseQuantity={increaseQuantity}
+        clearCart={clearCart}
       />
 
       <section className={styles.photoList}>

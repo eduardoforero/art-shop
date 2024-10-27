@@ -273,6 +273,24 @@
     color: var(--theme-color-white);
 }
 
+.productListWidgetButtons .btnDisabled {
+    display: inline-block;
+    flex: 1 1 auto;
+    margin: 5px !important;
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 11px;
+    text-align: center;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    padding: 13.5px 11px;
+    color: var(--theme-color-black);
+    border: solid 1px var(--theme-color-black);
+    cursor: default;
+    background-color: var(--theme-hover-gray);
+
+}
+
 @media (max-width: 767px) {
     .headerButtonLink {
         padding: 8px;

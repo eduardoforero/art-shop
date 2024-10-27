@@ -5,7 +5,7 @@ import userIcon from '/img/user-icon.svg'
 import wishIcon from '/img/wish-icon.svg'
 import styles from './Header.module.css'
 
-function Header({ cart, removeFromCart, decreaseQuantity, increaseQuantity }) {
+function Header({ cart, removeFromCart, decreaseQuantity, increaseQuantity, clearCart }) {
 
     const isEmpty = useMemo(() => cart.length === 0, [cart])
     const cartTotal = useMemo(() => cart.reduce((total, item) => total + (item.quantity * item.price), 0), [cart])
@@ -93,7 +93,7 @@ function Header({ cart, removeFromCart, decreaseQuantity, increaseQuantity }) {
                                                                                 +
                                                                             </button>
 
-                                                                            <span> X <bdi><span>$</span>{photo.price}</bdi></span>
+                                                                            <span> X <span>$</span>{photo.price}</span>
                                                                         </span>
                                                                     </div>
 
@@ -109,9 +109,9 @@ function Header({ cart, removeFromCart, decreaseQuantity, increaseQuantity }) {
                                                 <div className={styles.productListWidgetTotal}>
                                                     <span className={styles.productListWidgetTotalTitle}>Subtotal:</span>
                                                     <span className={styles.amount}>
-                                                        <bdi>
-                                                            <span>$</span>{cartTotal}
-                                                        </bdi>
+                                                        
+                                                        <span>$</span>{cartTotal}
+                                                        
                                                     </span>
                                                 </div>
                                             </>
@@ -120,10 +120,10 @@ function Header({ cart, removeFromCart, decreaseQuantity, increaseQuantity }) {
                                 }
 
                                 <div className={styles.productListWidgetButtons}>
-                                    <a href="" className={styles.button}>
-                                        View cart
+                                    <a onClick={clearCart} className={styles.button}>
+                                        Empty Cart
                                     </a>
-                                    <a href="" className={styles.button}>
+                                    <a className={styles.btnDisabled}>
                                         Checkout
                                     </a>
                                 </div>
