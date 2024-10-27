@@ -7,12 +7,20 @@ import styles from './App.module.css'
 
 function App() {
 
+  const initialCart = () => {
+    const localStorageCart = localStorage.getItem('cart')
+    return localStorageCart ? JSON.parse(localStorageCart) : []
+  }
+
   const [data, setData] = useState([])
-  const [cart, setCart] = useState([])
+  const [cart, setCart] = useState(initialCart)
 
   const MIN_ITEMS = 1
   const MAX_ITEMS = 5
 
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart))
+  }, [cart])
 
   useEffect(() => {
     setData(db)
