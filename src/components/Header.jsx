@@ -5,10 +5,10 @@ import userIcon from '/img/user-icon.svg'
 import wishIcon from '/img/wish-icon.svg'
 import styles from './Header.module.css'
 
-function Header({ cart, removeFromCart }) {
+function Header({ cart, removeFromCart, decreaseQuantity, increaseQuantity }) {
 
-    const isEmpty = useMemo(() => cart.length === 0, [cart]) 
-    const cartTotal = useMemo(() => cart.reduce( (total, item) => total + (item.quantity * item.price), 0 ), [cart]) 
+    const isEmpty = useMemo(() => cart.length === 0, [cart])
+    const cartTotal = useMemo(() => cart.reduce((total, item) => total + (item.quantity * item.price), 0), [cart])
 
     return (
         <header className={styles.mainHeader}>
@@ -66,13 +66,13 @@ function Header({ cart, removeFromCart }) {
                                                             <div className={styles.productListWidgetWrap}>
 
                                                                 <div className={styles.productListWidgetThumbCol}>
-                                                                   
+
                                                                     <img
                                                                         src={`/img/${photo.image}.jpg`}
                                                                         className={`${styles.productListWidgetThumb} ${styles.productListWidgetThumbCover}`}
                                                                         alt=""
                                                                     />
-                                                                    
+
                                                                 </div>
 
                                                                 <div className={styles.productListWidgetTitleCol}>
@@ -82,7 +82,19 @@ function Header({ cart, removeFromCart }) {
                                                                     </div>
 
                                                                     <div className={styles.productListWidgetPrice}>
-                                                                        <span>{photo.quantity} × <span><bdi><span>$</span>{photo.price}</bdi></span></span>
+                                                                        <span>
+
+
+                                                                            <button type="button" className={styles.btnIncDecQuantity} onClick={() => decreaseQuantity(photo.id)}>
+                                                                                -
+                                                                            </button>
+                                                                            {photo.quantity}
+                                                                            <button type="button" className={styles.btnIncDecQuantity} onClick={() => increaseQuantity(photo.id)}>
+                                                                                +
+                                                                            </button>
+
+                                                                            <span> X <bdi><span>$</span>{photo.price}</bdi></span>
+                                                                        </span>
                                                                     </div>
 
                                                                 </div>

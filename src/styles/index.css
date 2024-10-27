@@ -3,6 +3,7 @@
 :root {
     --theme-color-black: #000;
     --theme-color-white: #fff;
+    --theme-hover-black: #3d3d3d;
 }
 
 a {

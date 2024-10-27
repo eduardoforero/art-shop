@@ -193,6 +193,20 @@
     color: var(--theme-color-black);
 }
 
+.btnIncDecQuantity {
+    margin: 0px 3px;
+    font-size: 16px;
+    padding: 3px 6px;
+    background: var(--theme-color-black);
+    color: var(--theme-color-white);
+    border: none;
+    cursor: pointer;
+}
+
+.btnIncDecQuantity:hover {
+    background: var(--theme-hover-black);
+}
+
 .productListWidgetRemove {
     cursor: pointer;
     color: var(--theme-color-white);
