@@ -7,7 +7,7 @@ function Photo({ photo, addToCart }) {
     return (
         <article className={styles.singlePhoto}>
 
-            <img src={`/img/${image}.jpg`} className={styles.backPhoto} />
+            <img src={`/img/${image}.png`} className={styles.backPhoto} />
 
             <div className={styles.innerPhoto}>
 

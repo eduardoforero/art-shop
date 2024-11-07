@@ -68,7 +68,7 @@ function Header({ cart, removeFromCart, decreaseQuantity, increaseQuantity, clea
                                                                 <div className={styles.productListWidgetThumbCol}>
 
                                                                     <img
-                                                                        src={`/img/${photo.image}.jpg`}
+                                                                        src={`/img/${photo.image}.png`}
                                                                         className={`${styles.productListWidgetThumb} ${styles.productListWidgetThumbCover}`}
                                                                         alt=""
                                                                     />

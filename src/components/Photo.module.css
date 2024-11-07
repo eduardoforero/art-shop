@@ -2,7 +2,7 @@
     position: relative;
     min-height: 350px;
     padding: 50px;
-    background: linear-gradient(128deg, rgba(2,0,36,0.8) 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(128deg, rgba(2,0,36,0.8) 0%, rgba(0,0,0,0.4) 30%, rgba(0,0,0,0) 100%);
 }
 
 .backPhoto {
