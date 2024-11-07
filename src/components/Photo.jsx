@@ -9,14 +9,18 @@ function Photo({ photo, addToCart }) {
 
             <img src={`/img/${image}.jpg`} className={styles.backPhoto} />
 
-            <header>
-                <h3>{name}</h3>
-            </header>
+            <div className={styles.innerPhoto}>
 
-            <p><span>${price}</span></p>
-            <button type="button" onClick={() => addToCart(photo)}>
-                Add to Cart
-            </button>
+                <header>
+                    <h3>{name}</h3>
+                </header>
+
+                <p><span>${price}</span></p>
+                <button type="button" onClick={() => addToCart(photo)}>
+                    Add to Cart
+                </button>
+
+            </div>
 
         </article>
     )

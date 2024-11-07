@@ -1,6 +1,8 @@
 .singlePhoto {
     position: relative;
     min-height: 350px;
+    padding: 50px;
+    background: linear-gradient(128deg, rgba(2,0,36,0.8) 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,0) 100%);
 }
 
 .backPhoto {
@@ -13,6 +15,38 @@
     z-index: -1;
 }
 
-.singlePhoto h3, .singlePhoto p {
+.innerPhoto {
+    display: flex;
+    flex: 1 1 auto;
+    position: relative;
+    flex-direction: column;
+    z-index: 2;
+    align-items: flex-start;
+}
+
+.innerPhoto h3, .innerPhoto p {
     color: var(--theme-color-white);
+}
+
+.innerPhoto h3 {
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 1.6rem;
+}
+
+.innerPhoto p span {
+    font-size: 1.4rem;
+    font-weight: bolder;
+}
+
+.innerPhoto button {
+    border: 1px solid var(--theme-color-white);
+    background: none;
+    padding: 8px 15px;
+    color: var(--theme-color-white);
+}
+
+.innerPhoto button:hover {
+    background: var(--theme-color-white);
+    color: var(--theme-color-black);
 }

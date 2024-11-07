@@ -21,23 +21,23 @@ function Header({ cart, removeFromCart, decreaseQuantity, increaseQuantity, clea
                 <div className={styles.headerColRight}>
                     <div className={styles.headerColRightWrap}>
 
-                        <div className={styles.headerSearchButton}>
+                        {/* <div className={styles.headerSearchButton}>
                             <a className={`${styles.headerButtonLink} ${styles.headerButtonLinkSearch}`} href="" aria-label="Search">
                                 <img src={searchIcon} alt="Search module" />
                             </a>
-                        </div>
+                        </div> */}
 
-                        <div className={styles.headerAuthButton}>
+                        {/* <div className={styles.headerAuthButton}>
                             <a className={`${styles.headerButtonLink} ${styles.headerButtonLinkAccount}`} href="" aria-label="My Account">
                                 <img src={userIcon} alt="User login" />
                             </a>
-                        </div>
+                        </div> */}
 
-                        <div className={styles.headerWishlist}>
+                        {/* <div className={styles.headerWishlist}>
                             <a className={styles.headerButtonLink} href="" aria-label="Wishlist">
                                 <img src={wishIcon} alt="Wishlist icon" />
                             </a>
-                        </div>
+                        </div> */}
 
                         <div className={styles.headerCart}>
 

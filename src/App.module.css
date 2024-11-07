@@ -1,11 +1,17 @@
 .photoList{
-    margin: 0 auto;
+    margin: 2rem auto;
     max-width: 1320px;
-
+    padding: 0px 30px;
 }
 
 .listGrid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 30px;
+}
+
+@media (max-width: 767px) {
+    .listGrid {
+        grid-template-columns: 1fr;
+    }
 }
